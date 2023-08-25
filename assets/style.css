@@ -1,41 +1,84 @@
-*{
-  margin: 0px;
-  padding: 0px;
+
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-.main{
+
+.main {
   display: flex;
   justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-}
-
-.container{
-  width: 150px;
-  height: 350px;
+  justify-content: space-around;
+  padding: 10px;
+  width: 100px;
+  height: 300px;
   background-color: rgb(49, 48, 48);
-  border-radius: 8px;
   margin-top: 200px;
-  text-align: center;
+  border-radius: 24px;
 }
 
-.red{
-  width: 120px;
+.red,
+.yellow,
+.green {
+  width: 80px;
   height: 100px;
+  border-radius: 50%;
+  margin: 12px;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+
+.red {
   background-color: red;
-  border-radius: 50%;
-  margin: 12px;
+  animation-name: RedLight;
 }
-.green{
-  width: 120px;
-  height: 100px;
-  background-color: green;
-  border-radius: 50%;
-  margin: 12px;
-}
-.yellow{
-  width: 120px;
-  height: 100px;
+
+.yellow {
   background-color: yellow;
-  border-radius: 50%;
-  margin: 12px;
+  animation-name: YellowLight;
 }
+
+.green {
+  background-color: green;
+  animation-name: GreenLight;
+}
+
+@keyframes RedLight {
+  0%, 100% {
+    background: rgb(72, 26, 26);
+  }
+  45% {
+    background: rgb(72, 32, 32);
+  }
+  55%, 95% {
+    background: #f00;
+  }
+}
+
+@keyframes YellowLight {
+  0%, 100% {
+    background: rgb(121, 121, 13);
+  }
+  40%, 60% {
+    background: yellow;
+  }
+  80% {
+    background: rgb(121, 121, 13);
+  }
+}
+
+@keyframes GreenLight {
+  0%, 100% {
+    background: rgb(4, 142, 4);
+  }
+  50%, 60% {
+    background: rgb(25, 41, 25);
+  }
+}
+
